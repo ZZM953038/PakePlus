@@ -1,22 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="styles.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PakePlus App</title>
-        <script type="module" src="/main.js" defer></script>
-    </head>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四象限待办事项</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 四象限待办管理器</h1>
+        
+        <!-- 任务创建表单 -->
+        <div class="task-form">
+            <div class="form-row">
+                <input type="text" id="task-title" placeholder="输入任务标题..." required>
+                
+                <select id="task-priority">
+                    <option value="urgent-important">🔥 重要且紧急</option>
+                    <option value="important-not-urgent">📌 重要不紧急</option>
+                    <option value="not-important-urgent">⏰ 紧急不重要</option>
+                    <option value="not-important-not-urgent">🧠 不紧急不重要</option>
+                </select>
+                
+                <button onclick="addTask()" class="add-btn">
+                    <span class="btn-text">添加</span>
+                </button>
+            </div>
+        </div>
 
-    <body>
-        <main class="container">
-            <h1>Welcome to PakePlus</h1>
-
-            <form class="row" id="greet-form">
-                <input id="greet-input" placeholder="Enter a name..." />
-                <button type="submit">Greet</button>
-            </form>
-            <p id="greet-msg"></p>
-        </main>
-    </body>
+        <!-- 四象限容器 -->
+        <div class="quadrant-container">
+            <div class="quadrant urgent-important">
+                <h2>🔥 重要且紧急</h2>
+                <p>处理需要立即关注的重要任务</p>
+            </div>
+            <div class="quadrant important-not-urgent">
+                <h2>📌 重要不紧急</h2>
+                <p>规划长期目标和预防性工作</p>
+            </div>
+            <div class="quadrant not-important-urgent">
+                <h2>⏰ 紧急不重要</h2>
+                <p>处理可以委派的紧急任务</p>
+            </div>
+            <div class="quadrant not-important-not-urgent">
+                <h2>🧠 不紧急不重要</h2>
+                <p>进行休闲或低优先级的任务</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
 </html>
